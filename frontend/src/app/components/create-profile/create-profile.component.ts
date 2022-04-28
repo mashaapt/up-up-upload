@@ -29,7 +29,7 @@ export class CreateProfileComponent implements OnInit {
   }
 
   onFileSelect(event: Event) {
-    const file = (event.target as HTMLInputElement | files[0]);
+    const file = (event.target as HTMLInputElement).files[0];
     const allowedMimeTypes = ['image/png', 'image/jpeg', 'image/jpg'];
     this.form.patchValue({ image: file })
     if (file && allowedMimeTypes.includes(file.type)) {
