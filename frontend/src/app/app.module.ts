@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +18,6 @@ import { AllProfilesComponent } from './components/all-profiles/all-profiles.com
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClient,
     HttpClientModule
   ],
   providers: [],

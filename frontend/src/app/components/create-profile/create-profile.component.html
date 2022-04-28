@@ -2,7 +2,7 @@
 <hr>
 <form [formGroup]="form" (submit)="onSubmit()">
     <div>
-        <input type="text" [formControlName]="name" placeholder="Enter name...">
+        <input type="text" formControlName="name" placeholder="Enter name...">
     </div>
     <div>
         <input type="file" (change)="onFileSelect($event)">

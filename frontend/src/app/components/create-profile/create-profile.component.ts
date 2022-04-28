@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Profile } from 'src/app/models/Profile';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
   selector: 'app-create-profile',
@@ -13,7 +14,7 @@ export class CreateProfileComponent implements OnInit {
   profile: Profile;
   imageData: string;
 
-  constructor() { }
+  constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -24,6 +25,7 @@ export class CreateProfileComponent implements OnInit {
   }
 
   onSubmit() {
+    this.profileService.addProfile(this.form.value.name, this.form.value.image);
     this.form.reset();
     this.imageData = null;
   }
